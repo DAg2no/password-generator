@@ -1,42 +1,28 @@
-<<<<<<< HEAD
+const generatePassword = (base, length) => {
+    let password = "";
+    for (let x = 0; x < length; x++) {
+        let random = Math.floor(Math.random() * base.length);
+        password += base.charAt(random);
+    }
+    return password;
+};
 
 const generate = () => {
-    var length = parseInt(inputlength.value);
-    var generatedPassword = document.getElementById('generatedPassword');
-    var btnGenerate = document.getElementById('btnGenerate');
-    var checkbox1 = document.getElementById('checkbox1');
-    var checkbox2 = document.getElementById('checkbox2');
-=======
-const generate = () => {
-    var length=parseInt(inputlength.value);
->>>>>>> 9b8f0622342dfd14ce8e37f877c5290a9b18f9da
-    var letras = "abcdefghyijklmnopqrstuvwxyzABCDEFGHIJKLMNOPKRSTUVWXYZ";
-    const numeros = '0123456789';
-    const simbolos = '!"·#$¢%∞&¬/÷(“)=≠?´¿^[*]¨{Çç},;„.:…-_';
+    let length = parseInt(inputLength.value);
 
-<<<<<<< HEAD
-    if(checkbox1.ariaChecked) letras+=numeros;
-    if(checkbox2.ariaChecked) numeros+=simbolos;
+    let letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numeros = "0123456789";
+    const simbolos = ".?,;-_¡!¿*%&$/()[]{}|@><";
 
+    if (checkbox1.checked) letras += numeros;
 
-    generatedPassword.innerText = "AAA";
-=======
-    if(checkbox1.checked) letras+=numeros;
-    if(checkbox2.checked) numeros += simbolos;
+    if (checkbox2.checked) letras += simbolos;
 
+    generatedPassword.innerText = generatePassword(base, length);
+};
 
-    generatePassword.innertext = "AAA";
-
->>>>>>> 9b8f0622342dfd14ce8e37f877c5290a9b18f9da
-}
-
-
-window.addEventListener('DOMContentLoaded', ()=>{
-    btnGenerate.addEventListener('click,', () =>{
+window.addEventListener("DOMContentLoaded", () => {
+    btnGenerate.addEventListener("click", () => {
         generate();
-    })
-<<<<<<< HEAD
-})
-=======
-})
->>>>>>> 9b8f0622342dfd14ce8e37f877c5290a9b18f9da
+    });
+});
